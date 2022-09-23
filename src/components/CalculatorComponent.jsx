@@ -1,33 +1,48 @@
 import { ButtonComponent } from './ButtonComponent';
-import { ResultComponent } from './ResultComponent';
+
 import {useState} from 'react';
+import { SumButton } from './SumButton';
 
 export const CalculatorComponent = () => {
 const [text, setText] = useState('');
+const [result, setResult] = useState('');
 
   const addValueToResult = (value) =>{
     setText((text) => [...text, value + ''])
+    console.log(text)
+  }
+
+  const sum = (value) =>{
+    setText((text) => parseInt(text));
+    addValueToResult(value)
+    console.log(text)
+  }
+  const resetResult = () =>{
+    setText('');
+    setResult('');
   }
   return (
     <>
-      <ResultComponent text={text} />
+      <h2>{text}</h2>
+      <p>Result: {result} </p>
       <section className='buttons'>
-        <ButtonComponent value={7} addValueToResult={addValueToResult} />
-        <ButtonComponent value={8} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={9} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'%'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'Clear'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={4}addValueToResult={addValueToResult} />
-        <ButtonComponent value={5} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={6} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'X'}addValueToResult={addValueToResult} />
-        <ButtonComponent value={'/'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={1} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={2} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={3} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'+'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'='} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={0} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={7}   onClick={addValueToResult}  />
+        <ButtonComponent value={8} onClick={addValueToResult}/>
+        <ButtonComponent value={9} onClick={addValueToResult}/>
+        <ButtonComponent value={'%'} onClick={addValueToResult}/>
+      
+        <ButtonComponent value={4} onClick={addValueToResult} />
+        <ButtonComponent value={5} onClick={addValueToResult}/>
+        <ButtonComponent value={6} onClick={addValueToResult}/>
+        <ButtonComponent value={'X'} onClick={addValueToResult} />
+        <ButtonComponent value={'/'} onClick={addValueToResult}/>
+        <ButtonComponent value={1} onClick={addValueToResult}/>
+        <ButtonComponent value={2} onClick={addValueToResult}/>
+        <ButtonComponent value={3} onClick={addValueToResult}/>
+        <SumButton value={'+'}  sum={sum}/>
+        <ButtonComponent value={'='} onClick={addValueToResult}/>
+        <ButtonComponent value={0} onClick={addValueToResult}/>
+        <ButtonComponent value={'Clear'} resetResult={resetResult}/>
       </section>
 
     </>
