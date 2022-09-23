@@ -1,9 +1,11 @@
 /* eslint-disable no-fallthrough */
+
 import {useState} from 'react';
 import './App.scss';
 
 import { ButtonComponent } from './components/ButtonComponent';
 import { ClearButon } from './components/ClearButon';
+import { EqualButton } from './components/EqualButton';
 
 
 const App = () => {
@@ -13,6 +15,7 @@ const [firstValue, setFirstValue] = useState('');
 const [secondValue, setSecondValue] = useState('');
 const [result, setResult] = useState('');
 const [error, setError] = useState('');
+const [isDisable, setIsDisable] = useState(false)
 const text = firstValue + operator + secondValue;
   const addValue = (value) =>{
     
@@ -32,7 +35,7 @@ const text = firstValue + operator + secondValue;
    
   }
   const resetResult = () =>{
-    
+    setIsDisable(false)
     setFirstValue('');
     setSecondValue('');
     setOperator('');
@@ -64,7 +67,7 @@ const text = firstValue + operator + secondValue;
       default: 
         break
     }
-    setTimeout(resetResult, 3000)
+    setIsDisable(true)
   }
   
   
@@ -77,22 +80,22 @@ const text = firstValue + operator + secondValue;
       <h2>{text}</h2>
       <p>Result: {result} </p>
       <section className='buttons'>
-        <ButtonComponent value={'7'} action={addValue} />
-        <ButtonComponent value={'8'} action={addValue}/>
-        <ButtonComponent value={'9'} action={addValue}/>
-        <ButtonComponent value={'%'} action={addOperator}/>
-        <ButtonComponent value={'4'} action={addValue} />
-        <ButtonComponent value={'5'} action={addValue}/>
-        <ButtonComponent value={'6'} action={addValue}/>
-        <ButtonComponent value={'X'} action={addOperator} />
-        <ButtonComponent value={'/'} action={addOperator}/>
-        <ButtonComponent value={'1'} action={addValue}/>
-        <ButtonComponent value={'2'} action={addValue}/>
-        <ButtonComponent value={'3'} action={addValue}/>
-        <ButtonComponent value={'+'} action={addOperator}/>
-        <ButtonComponent value={'-'} action={addOperator}/>
-        <ButtonComponent value={'='} action={calculate}/>
-        <ButtonComponent value={'0'} action={addValue}/>
+        <ButtonComponent value={'7'} isDisable={isDisable} action={addValue} />
+        <ButtonComponent value={'8'} isDisable={isDisable} action={addValue}/>
+        <ButtonComponent value={'9'} isDisable={isDisable} action={addValue}/>
+        <ButtonComponent value={'%'} isDisable={isDisable} action={addOperator}/>
+        <ButtonComponent value={'4'} isDisable={isDisable} action={addValue} />
+        <ButtonComponent value={'5'} isDisable={isDisable} action={addValue}/>
+        <ButtonComponent value={'6'} isDisable={isDisable} action={addValue}/>
+        <ButtonComponent value={'X'} isDisable={isDisable} action={addOperator} />
+        <ButtonComponent value={'/'} isDisable={isDisable} action={addOperator}/>
+        <ButtonComponent value={'1'} isDisable={isDisable} action={addValue}/>
+        <ButtonComponent value={'2'} isDisable={isDisable} action={addValue}/>
+        <ButtonComponent value={'3'} isDisable={isDisable} action={addValue}/>
+        <ButtonComponent value={'+'} isDisable={isDisable} action={addOperator}/>
+        <ButtonComponent value={'-'} isDisable={isDisable} action={addOperator}/>
+        <EqualButton value={'='} isDisable={isDisable} setIsDisable={setIsDisable} action={calculate}/>
+        <ButtonComponent value={'0'} isDisable={isDisable} action={addValue}/>
         <ClearButon value={'Clear'} resetResult={resetResult}/>
         {error}
       </section>

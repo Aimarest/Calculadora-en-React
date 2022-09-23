@@ -1,12 +1,12 @@
 
 
-export const ButtonComponent = ({value, action}) => {
+export const ButtonComponent = ({value, action, isDisable}) => {
 
   const handleClick = () =>{
     action(value);
   }
 
   return (
-    <button onClick={handleClick} value={value} className="btn">{value}</button>
+    <button onClick={handleClick} disabled={isDisable} value={value} className="btn">{value}</button>
   )
 }
