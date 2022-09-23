@@ -21,7 +21,7 @@ height: 100%;
     justify-content: center;
     align-items: center;
     width:40%;
-    max-height: 70%;
+    max-height: 50%;
     max-width:500px;
     background-color: #00916e;
     border-radius: 12px;
@@ -30,7 +30,7 @@ height: 100%;
     box-shadow: 15px 10px 0 5px #00000033;
     @media screen and (min-width:400px) {
     
-        padding: 4em 2.5em;
+        padding: 4em 3.8em;
     
 }
 @media screen and (min-width:764px) {
@@ -40,7 +40,7 @@ height: 100%;
 }
 @media screen and (min-width:1024px) {
     
-    padding: 8em 2.5em;
+    padding: 10em 5em;
 
 }
 }
@@ -60,6 +60,16 @@ height: 100%;
     flex-direction: column;
     box-shadow: 0px 0px 0px 10px #00000033;
     margin-bottom: 2em;
+ 
+@media screen and (min-width:764px) {
+    
+  
+    padding:1.8em;
+}
+@media screen and (min-width:1024px) {
+    padding:2.5em;
+    font-size: 1.5em;
+}
 }
 
 .buttons {
@@ -74,12 +84,12 @@ height: 100%;
 }
 @media screen and (min-width:764px) {
     
-    gap: 3px 3px;
+    gap: 15px 20px;
 
 }
 @media screen and (min-width:1024px) {
-    
-    gap: 3px 3px;
+    margin-top:3em;
+    gap: 20px 25px;
 
 }
 }
@@ -87,6 +97,9 @@ height: 100%;
     background-color: #00916e;
 }
 .btn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
    border-radius: 32px;
    padding:0.6em;
    border:none;
@@ -99,21 +112,42 @@ height: 100%;
 
 @media screen and (min-width:400px) {
     
-        padding:1em
+        padding:1.3em
     
 }
 @media screen and (min-width:764px) {
     
-    padding:1.2em
+    padding:1.8em
 
 }
 @media screen and (min-width:1024px) {
     
-    padding:1.8em
+    padding:2em
 
 }
+@media screen and (min-width:1400px) {
+ 
+  font-size: 1.3em; 
 }
+}
+
 .btnClear{
     margin-top:1em;
-    background-color:#224870
+    background-color:#224870;
+    width:8em;
+    @media screen and (min-width:764px) {
+    
+        margin-top:3em;
+    
+    }
+    @media screen and (min-width:1024px) {
+        width:20em;
+        margin-top:5em;
+    
+    }
+    @media screen and (min-width:1400px) {
+        width:24em;
+        margin-top:10em;
+        
+    }
 }
