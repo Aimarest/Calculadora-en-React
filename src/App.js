@@ -12,7 +12,7 @@ const [operator, setOperator] = useState('');
 const [firstValue, setFirstValue] = useState('');
 const [secondValue, setSecondValue] = useState('');
 const [result, setResult] = useState('');
-
+const [error, setError] = useState('');
 
   const addValue = (value) =>{
     if (operator === ''){
@@ -27,7 +27,7 @@ const [result, setResult] = useState('');
   const addOperator = (value) =>{
     setOperator(value)
   }
-
+  
   const calculate = (value) =>{
    
      setSecondValue((secondValue) => secondValue + value )
@@ -43,7 +43,13 @@ const [result, setResult] = useState('');
         break
       case '/':
         setResult(firstNumber / secondNumber)
-        
+        break
+      case 'X':
+        setResult(firstNumber * secondNumber)
+        break
+      case '%':
+        secondValue === '' ? setResult(firstNumber * 10 / 100) : setError('operation not possible')
+       break
         default: break
     }
   }
@@ -54,6 +60,7 @@ const [result, setResult] = useState('');
     setSecondValue('');
     setOperator('');
     setResult('');
+    setError('')
   }
 
   return (
@@ -81,6 +88,7 @@ const [result, setResult] = useState('');
         <ButtonComponent value={'='} action={calculate}/>
         <ButtonComponent value={'0'} action={addValue}/>
         <ClearButon value={'Clear'} resetResult={resetResult}/>
+        {error}
       </section>
 
     </div>
