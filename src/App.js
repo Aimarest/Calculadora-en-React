@@ -13,26 +13,29 @@ const [firstValue, setFirstValue] = useState('');
 const [secondValue, setSecondValue] = useState('');
 const [result, setResult] = useState('');
 const [error, setError] = useState('');
-
+const text = firstValue + operator + secondValue;
   const addValue = (value) =>{
     if (operator === ''){
       setFirstValue((firstValue) => firstValue + value );
+      
     }
     else{
-      setSecondValue((secondValue) => secondValue + value )
+      setSecondValue((secondValue) => secondValue + value );
+     
     }
     
   }
   
   const addOperator = (value) =>{
     setOperator(value)
+   
   }
   
   const calculate = (value) =>{
    
      setSecondValue((secondValue) => secondValue + value )
-    const firstNumber = parseInt(firstValue);
-    const secondNumber = parseInt(secondValue);
+    let firstNumber = parseInt(firstValue);
+    let secondNumber = parseInt(secondValue);
   
     switch( operator ){
       case '+':
@@ -49,8 +52,9 @@ const [error, setError] = useState('');
         break
       case '%':
         secondValue === '' ? setResult(firstNumber * 10 / 100) : setError('operation not possible')
-       break
-        default: break
+        break
+      default: 
+        break
     }
   }
   
@@ -68,7 +72,7 @@ const [error, setError] = useState('');
     <header>
      <h1>Prueba INNOCV</h1> 
      </header>
-      <h2>{firstValue + operator + secondValue}</h2>
+      <h2>{text}</h2>
       <p>Result: {result} </p>
       <section className='buttons'>
         <ButtonComponent value={'7'} action={addValue} />
