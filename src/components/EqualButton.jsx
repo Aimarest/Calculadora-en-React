@@ -1,11 +1,12 @@
 
 
-export const EqualButton = ({value, action, isDisable,setIsDisable}) => {
+export const EqualButton = ({value, action, isDisable,setIsDisable, setError}) => {
 
 
     const handleClick = () =>{
         action(value);
-        setIsDisable(true)
+        setIsDisable(true);
+        setError('Click clear button to continue')
       }
     
       return (

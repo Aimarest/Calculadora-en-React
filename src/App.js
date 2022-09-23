@@ -101,7 +101,7 @@ const text = firstValue + operator + secondValue;
           <ButtonComponent value={'+'} isDisable={isDisable} action={addOperator} />
           <ButtonComponent value={'-'} isDisable={isDisable} action={addOperator} />
           <ButtonComponent value={'/'} isDisable={isDisable} action={addOperator} />
-          <EqualButton value={'='} isDisable={isDisable} setIsDisable={setIsDisable} action={calculate} />
+          <EqualButton value={'='} isDisable={isDisable} setError={setError} setIsDisable={setIsDisable} action={calculate} />
           <ButtonComponent value={'0'} isDisable={isDisable} action={addValue} />
         
         </section>
