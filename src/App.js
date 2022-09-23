@@ -18,7 +18,7 @@ const [error, setError] = useState('');
 const [isDisable, setIsDisable] = useState(false)
 const text = firstValue + operator + secondValue;
   const addValue = (value) =>{
-    
+    setError('');
     if (operator === ''){
       setFirstValue((firstValue) => firstValue + value );
       
@@ -31,8 +31,8 @@ const text = firstValue + operator + secondValue;
   }
   
   const addOperator = (value) =>{
-    setOperator(value)
-   
+    firstValue !== '' ? setOperator(value) : setError('You have to enter a initial number before')
+    
   }
   const resetResult = () =>{
     setIsDisable(false)
