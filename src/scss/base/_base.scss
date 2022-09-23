@@ -1,0 +1,18 @@
+.html {
+    height: 100vh;
+    background-color: #224870;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #224870;
+    font-family: 'Fraunces', serif;
+    height: 100%;
+}
+
+.title {
+    color: white;
+}

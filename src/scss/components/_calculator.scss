@@ -1,0 +1,28 @@
+.calculator {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    max-height: 30%;
+    max-width: 500px;
+    background-color: #00916e;
+    border-radius: 12px;
+    padding: 1.5em 2.5em;
+    border: 4px solid #224870;
+    box-shadow: 15px 10px 0 5px #00000033;
+
+    @media screen and (min-width:400px) {
+
+        padding: 4em 3.8em;
+
+    }
+
+    @media screen and (min-width:764px) {
+
+        padding: 6em 2.5em;
+
+    }
+
+}
