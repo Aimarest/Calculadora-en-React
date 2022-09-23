@@ -3,20 +3,20 @@ import { ResultComponent } from './ResultComponent';
 import {useState} from 'react';
 
 export const CalculatorComponent = () => {
-const [result, setResult] = useState([]);
+const [text, setText] = useState('');
 
   const addValueToResult = (value) =>{
-    console.log(value)
+    setText((text) => [...text, value + ''])
   }
   return (
     <>
-      <ResultComponent />
+      <ResultComponent text={text} />
       <section className='buttons'>
         <ButtonComponent value={7} addValueToResult={addValueToResult} />
         <ButtonComponent value={8} addValueToResult={addValueToResult}/>
         <ButtonComponent value={9} addValueToResult={addValueToResult}/>
         <ButtonComponent value={'%'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'CE'} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={'Clear'} addValueToResult={addValueToResult}/>
         <ButtonComponent value={4}addValueToResult={addValueToResult} />
         <ButtonComponent value={5} addValueToResult={addValueToResult}/>
         <ButtonComponent value={6} addValueToResult={addValueToResult}/>
