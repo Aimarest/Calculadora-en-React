@@ -51,23 +51,28 @@ const text = firstValue + operator + secondValue;
     switch( operator ){
       case '+':
         setResult(firstNumber + secondNumber)
+        setError('Click clear button to continue')
         break
       case '-':
         setResult(firstNumber - secondNumber)
+        setError('Click clear button to continue')
         break
       case '/':
         setResult(firstNumber / secondNumber)
+        setError('Click clear button to continue')
         break
       case 'X':
         setResult(firstNumber * secondNumber)
+        setError('Click clear button to continue')
         break
       case '%':
-        secondValue === '' ? setResult(firstNumber * 10 / 100) : setError('operation not possible')
+        secondValue === '' ? setResult(firstNumber * 10 / 100) : setError('Operation not possible, click clear button to continue')
         break
       default: 
         break
     }
     setIsDisable(true)
+    
   }
   
   
@@ -82,8 +87,8 @@ const text = firstValue + operator + secondValue;
 
         <div className='input'>
           <p className='text'>{text}</p>
-          <p  className='text'>Result: {result} </p>
           <p className='errorMessage text'>{error}</p>
+          <p  className='text'>Result: {result} </p>
         </div>
 
         <section className='buttons'>
