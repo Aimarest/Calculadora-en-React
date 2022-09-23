@@ -13,7 +13,6 @@ const [firstValue, setFirstValue] = useState('');
 const [secondValue, setSecondValue] = useState('');
 const [result, setResult] = useState('');
 
-const text = firstValue + operator + secondValue;
 
   const addValue = (value) =>{
     if (operator === ''){
@@ -50,6 +49,7 @@ const text = firstValue + operator + secondValue;
   }
   
   const resetResult = () =>{
+    
     setFirstValue('');
     setSecondValue('');
     setOperator('');
@@ -61,7 +61,7 @@ const text = firstValue + operator + secondValue;
     <header>
      <h1>Prueba INNOCV</h1> 
      </header>
-      <h2>{text}</h2>
+      <h2>{firstValue + operator + secondValue}</h2>
       <p>Result: {result} </p>
       <section className='buttons'>
         <ButtonComponent value={'7'} action={addValue} />
