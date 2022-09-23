@@ -2,25 +2,36 @@ import {useState} from 'react';
 import './App.scss';
 
 import { ButtonComponent } from './components/ButtonComponent';
+import { ClearButon } from './components/ClearButon';
 import { SumButton } from './components/SumButton';
 
 const App = () => {
 
-const [text, setText] = useState('');
+const [operator, setOperator] = useState('');
+const [firstValue, setFirstValue] = useState('');
+const [secondValue, setSecondValue] = useState('');
 const [result, setResult] = useState('');
 
-  const addValueToResult = (value) =>{
-    setText((text) => `${text + value}`)
-    console.log(text)
+const text = firstValue + operator + secondValue;
+  const addValue = (value) =>{
+    if (operator === ''){
+      setFirstValue((firstValue) => firstValue + value );
+    }
+    else{
+      setSecondValue((secondValue) => secondValue + value )
+    }
+    
+   
   }
-
-  const sum = (value) =>{
-    setText((text) => parseInt(text));
-    addValueToResult(value)
-    console.log(text)
+  
+  const addOperator = (value) =>{
+    const firstNumber = parseInt(firstValue)
+    setOperator(value)
+    setFirstValue(firstNumber)
   }
+  
   const resetResult = () =>{
-    setText('');
+   
     setResult('');
   }
 
@@ -32,23 +43,23 @@ const [result, setResult] = useState('');
       <h2>{text}</h2>
       <p>Result: {result} </p>
       <section className='buttons'>
-        <ButtonComponent value={'7'} addValueToResult={addValueToResult} />
-        <ButtonComponent value={'8'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'9'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'%'} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={'7'} addValue={addValue} />
+        <ButtonComponent value={'8'} addValue={addValue}/>
+        <ButtonComponent value={'9'} addValue={addValue}/>
+        <ButtonComponent value={'%'} addValue={addValue}/>
       
-        <ButtonComponent value={'4'}addValueToResult={addValueToResult} />
-        <ButtonComponent value={'5'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'6'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'X'}addValueToResult={addValueToResult} />
-        <ButtonComponent value={'/'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'1'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'2'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'3'} addValueToResult={addValueToResult}/>
-        <SumButton value={'+'}  sum={sum}/>
-        <ButtonComponent value={'='} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'0'} addValueToResult={addValueToResult}/>
-        <ButtonComponent value={'Clear'} resetResult={resetResult}/>
+        <ButtonComponent value={'4'}addValue={addValue} />
+        <ButtonComponent value={'5'} addValue={addValue}/>
+        <ButtonComponent value={'6'} addValue={addValue}/>
+        <ButtonComponent value={'X'}addValue={addValue} />
+        <ButtonComponent value={'/'} addValue={addValue}/>
+        <ButtonComponent value={'1'} addValue={addValue}/>
+        <ButtonComponent value={'2'} addValue={addValue}/>
+        <ButtonComponent value={'3'} addValue={addValue}/>
+        <SumButton value={'+'}  addOperator={addOperator}/>
+        <ButtonComponent value={'='} addValue={addValue}/>
+        <ButtonComponent value={'0'} addValue={addValue}/>
+        <ClearButon value={'Clear'} resetResult={resetResult}/>
       </section>
 
     </div>
