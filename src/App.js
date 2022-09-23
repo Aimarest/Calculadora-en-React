@@ -75,7 +75,7 @@ const text = firstValue + operator + secondValue;
   return (
     <div className="App">
       <header>
-        <h1>Prueba INNOCV</h1>
+        <h1 className='title'>Prueba INNOCV</h1>
       </header>
       <section className='calculator'>
 
