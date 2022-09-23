@@ -81,9 +81,9 @@ const text = firstValue + operator + secondValue;
 
 
         <div className='input'>
-          <p>{text}</p>
-          <p>Result: {result} </p>
-          <p className='errorMessage'>{error}</p>
+          <p className='text'>{text}</p>
+          <p  className='text'>Result: {result} </p>
+          <p className='errorMessage text'>{error}</p>
         </div>
 
         <section className='buttons'>
