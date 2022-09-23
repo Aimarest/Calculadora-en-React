@@ -1,1 +1,26 @@
+.App{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.calculator{
+    display:flex;
+    flex-direction: column;
+    width:60%;
+    max-width:500px;
+    background-color: grey;
+}
 
+
+.buttons{
+    display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  
+}
+.btn{
+   border-radius: 1em;
+   padding:1.2em
+}

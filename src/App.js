@@ -74,32 +74,39 @@ const text = firstValue + operator + secondValue;
 
   return (
     <div className="App">
-    <header>
-     <h1>Prueba INNOCV</h1> 
-     </header>
-      <h2>{text}</h2>
-      <p>Result: {result} </p>
-      <section className='buttons'>
-        <ButtonComponent value={'7'} isDisable={isDisable} action={addValue} />
-        <ButtonComponent value={'8'} isDisable={isDisable} action={addValue}/>
-        <ButtonComponent value={'9'} isDisable={isDisable} action={addValue}/>
-        <ButtonComponent value={'%'} isDisable={isDisable} action={addOperator}/>
-        <ButtonComponent value={'4'} isDisable={isDisable} action={addValue} />
-        <ButtonComponent value={'5'} isDisable={isDisable} action={addValue}/>
-        <ButtonComponent value={'6'} isDisable={isDisable} action={addValue}/>
-        <ButtonComponent value={'X'} isDisable={isDisable} action={addOperator} />
-        <ButtonComponent value={'/'} isDisable={isDisable} action={addOperator}/>
-        <ButtonComponent value={'1'} isDisable={isDisable} action={addValue}/>
-        <ButtonComponent value={'2'} isDisable={isDisable} action={addValue}/>
-        <ButtonComponent value={'3'} isDisable={isDisable} action={addValue}/>
-        <ButtonComponent value={'+'} isDisable={isDisable} action={addOperator}/>
-        <ButtonComponent value={'-'} isDisable={isDisable} action={addOperator}/>
-        <EqualButton value={'='} isDisable={isDisable} setIsDisable={setIsDisable} action={calculate}/>
-        <ButtonComponent value={'0'} isDisable={isDisable} action={addValue}/>
-        <ClearButon value={'Clear'} resetResult={resetResult}/>
-        {error}
-      </section>
+      <header>
+        <h1>Prueba INNOCV</h1>
+      </header>
+      <section className='calculator'>
 
+
+        <div className='input'>
+          <h2>{text}</h2>
+          <p>Result: {result} </p>
+        </div>
+
+        <section className='buttons'>
+          <ButtonComponent value={'7'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'8'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'9'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'%'} isDisable={isDisable} action={addOperator} />
+          <ButtonComponent value={'4'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'5'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'6'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'X'} isDisable={isDisable} action={addOperator} />
+         
+          <ButtonComponent value={'1'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'2'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'3'} isDisable={isDisable} action={addValue} />
+          <ButtonComponent value={'+'} isDisable={isDisable} action={addOperator} />
+          <ButtonComponent value={'-'} isDisable={isDisable} action={addOperator} />
+          <ButtonComponent value={'/'} isDisable={isDisable} action={addOperator} />
+          <EqualButton value={'='} isDisable={isDisable} setIsDisable={setIsDisable} action={calculate} />
+          <ButtonComponent value={'0'} isDisable={isDisable} action={addValue} />
+          <ClearButon value={'Clear'} resetResult={resetResult} />
+          <p className='errorMessage'>{error}</p>
+        </section>
+      </section>
     </div>
   )
   }

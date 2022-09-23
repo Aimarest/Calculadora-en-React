@@ -6,6 +6,6 @@ export const ClearButon = ({value, resetResult}) => {
         resetResult();
     }
   return (
-    <button onClick={handleClick} value={value} className="btn">{value}</button>
+    <button onClick={handleClick} value={value} className="btnClear btn">{value}</button>
   )
 }
