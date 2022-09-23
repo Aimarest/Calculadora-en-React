@@ -1,9 +1,9 @@
 
 
-export const ButtonComponent = ({value, addValueToResult}) => {
+export const ButtonComponent = ({value, action}) => {
 
   const handleClick = () =>{
-   addValueToResult(value);
+    action(value);
   }
 
   return (
