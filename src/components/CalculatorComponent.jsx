@@ -1,27 +1,33 @@
 import { ButtonComponent } from './ButtonComponent';
 import { ResultComponent } from './ResultComponent';
+import {useState} from 'react';
 
 export const CalculatorComponent = () => {
+const [result, setResult] = useState([]);
+
+  const addValueToResult = (value) =>{
+    console.log(value)
+  }
   return (
     <>
       <ResultComponent />
       <section className='buttons'>
-        <ButtonComponent value={7} />
-        <ButtonComponent value={8} />
-        <ButtonComponent value={9} />
-        <ButtonComponent value={'%'} />
-        <ButtonComponent value={'CE'} />
-        <ButtonComponent value={4} />
-        <ButtonComponent value={5} />
-        <ButtonComponent value={6} />
-        <ButtonComponent value={'X'} />
-        <ButtonComponent value={'/'} />
-        <ButtonComponent value={1} />
-        <ButtonComponent value={2} />
-        <ButtonComponent value={3} />
-        <ButtonComponent value={'+'} />
-        <ButtonComponent value={'='} />
-        <ButtonComponent value={0} />
+        <ButtonComponent value={7} addValueToResult={addValueToResult} />
+        <ButtonComponent value={8} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={9} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={'%'} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={'CE'} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={4}addValueToResult={addValueToResult} />
+        <ButtonComponent value={5} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={6} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={'X'}addValueToResult={addValueToResult} />
+        <ButtonComponent value={'/'} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={1} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={2} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={3} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={'+'} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={'='} addValueToResult={addValueToResult}/>
+        <ButtonComponent value={0} addValueToResult={addValueToResult}/>
       </section>
 
     </>

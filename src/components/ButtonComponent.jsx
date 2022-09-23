@@ -1,9 +1,9 @@
 
 
-export const ButtonComponent = ({value}) => {
+export const ButtonComponent = ({value, addValueToResult}) => {
 
-  const handleClick = (ev) =>{
-    console.log('hello soy un boton', ev.target.value)
+  const handleClick = () =>{
+   addValueToResult(value);
   }
 
   return (
