@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 import {useState} from 'react';
 import './App.scss';
 
@@ -25,14 +26,27 @@ const text = firstValue + operator + secondValue;
   }
   
   const addOperator = (value) =>{
-    const firstNumber = parseInt(firstValue)
     setOperator(value)
-    setFirstValue(firstNumber)
   }
 
   const calculate = (value) =>{
-    setSecondValue((secondValue) => secondValue + value );
-    
+   
+     setSecondValue((secondValue) => secondValue + value )
+    const firstNumber = parseInt(firstValue);
+    const secondNumber = parseInt(secondValue);
+  
+    switch( operator ){
+      case '+':
+        setResult(firstNumber + secondNumber)
+        break
+      case '-':
+        setResult(firstNumber - secondNumber)
+        break
+      case '/':
+        setResult(firstNumber / secondNumber)
+        
+        default: break
+    }
   }
   
   const resetResult = () =>{
