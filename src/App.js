@@ -15,6 +15,7 @@ const [result, setResult] = useState('');
 const [error, setError] = useState('');
 const text = firstValue + operator + secondValue;
   const addValue = (value) =>{
+    
     if (operator === ''){
       setFirstValue((firstValue) => firstValue + value );
       
@@ -30,7 +31,14 @@ const text = firstValue + operator + secondValue;
     setOperator(value)
    
   }
-  
+  const resetResult = () =>{
+    
+    setFirstValue('');
+    setSecondValue('');
+    setOperator('');
+    setResult('');
+    setError('')
+  }
   const calculate = (value) =>{
    
      setSecondValue((secondValue) => secondValue + value )
@@ -56,16 +64,10 @@ const text = firstValue + operator + secondValue;
       default: 
         break
     }
+    setTimeout(resetResult, 3000)
   }
   
-  const resetResult = () =>{
-    
-    setFirstValue('');
-    setSecondValue('');
-    setOperator('');
-    setResult('');
-    setError('')
-  }
+  
 
   return (
     <div className="App">
