@@ -6,7 +6,6 @@ describe('Test on CalculatorComponent', () => {
             <CalculatorComponent/>
         );
         expect(container).toMatchSnapshot();
-      //  screen.debug();
     })
     test('If I do the sum of 2 + 6 the text of the result must be 8',()=>{
         render(<CalculatorComponent/>);
@@ -22,7 +21,7 @@ describe('Test on CalculatorComponent', () => {
         fireEvent.click(btnEqual);
         expect(textResult.innerHTML).toContain('8');
     })
-    test('If I do the division of 10 by 5 the result should be 2 ', () => { 
+    test('If I do the division of 10 by 5 the result should be 2', () => { 
         render(<CalculatorComponent/>);
         const btnValueOne = screen.getByRole('button', {name:1});
         const btnValueZero = screen.getByRole('button', {name:0});
@@ -79,4 +78,13 @@ describe('Test on CalculatorComponent', () => {
         fireEvent.click(btnEqual);
         expect(textError.innerHTML).toBe("Operation not possible, click clear button to continue");
       })
+     
+        
+        test('When the button has been pressed without an operation performed an error should be displayed on the input', () => { 
+            render(<CalculatorComponent/>)
+            const btnEqual = screen.getByRole('button', {name:'='});
+            const textError = screen.getByLabelText('errorMessage');
+            fireEvent.click(btnEqual);
+            expect(textError.innerHTML).toBe("You have to enter a valid operation. Please click clear value to continue")
+         })
 });
