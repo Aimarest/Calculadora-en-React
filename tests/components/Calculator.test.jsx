@@ -27,15 +27,56 @@ describe('Test on CalculatorComponent', () => {
         const btnValueOne = screen.getByRole('button', {name:1});
         const btnValueZero = screen.getByRole('button', {name:0});
         const btnValueFive = screen.getByRole('button', {name:5});
-        const btnSubOperator = screen.getByRole('button', {name:'/'});
+        const btnDivOperator = screen.getByRole('button', {name:'/'});
         const btnEqual = screen.getByRole('button', {name:'='});
         const textResult = screen.getByText('Result:');
+
+        fireEvent.click(btnValueOne);
+        fireEvent.click(btnValueZero);
+        fireEvent.click(btnDivOperator);
+        fireEvent.click(btnValueFive);
+        fireEvent.click(btnEqual);
+        expect(textResult.innerHTML).toContain('2');
+     })
+     test('If I do an operation and hit the clear button, the result should be empty', () =>{
+        render(<CalculatorComponent/>);
+        const btnValueOne = screen.getByRole('button', {name:1});
+        const btnValueZero = screen.getByRole('button', {name:0});
+        const btnValueFive = screen.getByRole('button', {name:5});
+        const btnSubOperator = screen.getByRole('button', {name:'-'});
+        const btnEqual = screen.getByRole('button', {name:'='});
+        const textResult = screen.getByText('Result:');
+        const btnClear = screen.getByText('Clear');
 
         fireEvent.click(btnValueOne);
         fireEvent.click(btnValueZero);
         fireEvent.click(btnSubOperator);
         fireEvent.click(btnValueFive);
         fireEvent.click(btnEqual);
-        expect(textResult.innerHTML).toContain('2');
+        fireEvent.click(btnClear);
+        expect(textResult.innerHTML).toBe("Result:  ");
      })
+     test('When the percentage of 8 is done, the result is 0.8', () => { 
+        render(<CalculatorComponent/>);
+        const btnValueEight = screen.getByRole('button', {name:8});
+        const btnPercentOperator = screen.getByRole('button', {name:'%'});
+        const btnEqual = screen.getByRole('button', {name:'='});
+        const textResult = screen.getByText('Result:');
+        fireEvent.click(btnValueEight);
+        fireEvent.click(btnPercentOperator);
+        fireEvent.click(btnEqual);
+        expect(textResult.innerHTML).toBe("Result: 0.8 ");
+      })
+      test('When trying to make a percentage with two numbers, I should get an error in the input', () =>{
+        render(<CalculatorComponent/>);
+        const btnValueEight = screen.getByRole('button', {name:8});
+        const btnPercentOperator = screen.getByRole('button', {name:'%'});
+        const btnEqual = screen.getByRole('button', {name:'='});
+        const textError = screen.getByLabelText('errorMessage')
+        fireEvent.click(btnValueEight);
+        fireEvent.click(btnPercentOperator);
+        fireEvent.click(btnValueEight);
+        fireEvent.click(btnEqual);
+        expect(textError.innerHTML).toBe("Operation not possible, click clear button to continue");
+      })
 });

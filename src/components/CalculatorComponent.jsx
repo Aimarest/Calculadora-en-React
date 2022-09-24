@@ -71,7 +71,7 @@ export const CalculatorComponent = () => {
 
             <div className='input'>
                 <p className='text'>{text}</p>
-                <p className='errorMessage text'>{error}</p>
+                <p aria-label='errorMessage' className='errorMessage text'>{error}</p>
                 <p className='text'>Result: {result} </p>
             </div>
 
