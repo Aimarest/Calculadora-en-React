@@ -71,7 +71,7 @@ export const CalculatorComponent = () => {
                 setResult(firstNumber * 10 / 100) 
             }
             else{
-                 setError('You have to enter a valid operation. Please click clear value to continue')
+                 setError('You have to enter a valid operation. Please click clear button to continue')
             }
            
         }

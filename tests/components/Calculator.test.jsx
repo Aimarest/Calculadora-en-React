@@ -85,6 +85,6 @@ describe('Test on CalculatorComponent', () => {
             const btnEqual = screen.getByRole('button', {name:'='});
             const textError = screen.getByLabelText('errorMessage');
             fireEvent.click(btnEqual);
-            expect(textError.innerHTML).toBe("You have to enter a valid operation. Please click clear value to continue")
+            expect(textError.innerHTML).toBe("You have to enter a valid operation. Please click clear button to continue")
          })
 });
