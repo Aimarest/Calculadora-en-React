@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test on CalculatorComponent Debe mostrar el componente inicial 1`] = `
+exports[`Test on CalculatorComponent It should display the initial component 1`] = `
 <div>
   <section
     class="calculator"
