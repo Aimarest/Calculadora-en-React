@@ -4,6 +4,7 @@ exports[`Test on the ButtonComponent The initial component should be displayed 1
 <div>
   <button
     class="btn"
+    name="2"
     value="2"
   >
     2

@@ -10,6 +10,6 @@ export const EqualButton = ({value, action, isDisable,setIsDisable}) => {
       }
     
       return (
-        <button onClick={handleClick} value={value} disabled={isDisable} className="btn">{value}</button>
+        <button onClick={handleClick} name={value} value={value} disabled={isDisable} className="btn">{value}</button>
       )
 }
