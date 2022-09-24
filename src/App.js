@@ -1,6 +1,6 @@
 /* eslint-disable no-fallthrough */
 
-import {useState} from 'react';
+import { useState } from 'react';
 import './App.scss';
 
 import { ButtonComponent } from './components/ButtonComponent';
@@ -10,31 +10,31 @@ import { EqualButton } from './components/EqualButton';
 
 const App = () => {
 
-const [operator, setOperator] = useState('');
-const [firstValue, setFirstValue] = useState('');
-const [secondValue, setSecondValue] = useState('');
-const [result, setResult] = useState('');
-const [error, setError] = useState('');
-const [isDisable, setIsDisable] = useState(false)
-const text = firstValue + operator + secondValue;
-  const addValue = (value) =>{
+  const [operator, setOperator] = useState('');
+  const [firstValue, setFirstValue] = useState('');
+  const [secondValue, setSecondValue] = useState('');
+  const [result, setResult] = useState('');
+  const [error, setError] = useState('');
+  const [isDisable, setIsDisable] = useState(false)
+  const text = firstValue + operator + secondValue;
+  const addValue = (value) => {
     setError('');
-    if (operator === ''){
-      setFirstValue((firstValue) => firstValue + value );
-      
+    if (operator === '') {
+      setFirstValue((firstValue) => firstValue + value);
+
     }
-    else{
-      setSecondValue((secondValue) => secondValue + value );
-     
+    else {
+      setSecondValue((secondValue) => secondValue + value);
+
     }
-    
+
   }
-  
-  const addOperator = (value) =>{
+
+  const addOperator = (value) => {
     firstValue !== '' ? setOperator(value) : setError('You have to enter a initial number before')
-    
+
   }
-  const resetResult = () =>{
+  const resetResult = () => {
     setIsDisable(false)
     setFirstValue('');
     setSecondValue('');
@@ -42,13 +42,13 @@ const text = firstValue + operator + secondValue;
     setResult('');
     setError('')
   }
-  const calculate = (value) =>{
-   
-     setSecondValue((secondValue) => secondValue + value )
+  const calculate = (value) => {
+
+    setSecondValue((secondValue) => secondValue + value)
     let firstNumber = parseInt(firstValue);
     let secondNumber = parseInt(secondValue);
-  
-    switch( operator ){
+
+    switch (operator) {
       case '+':
         setResult(firstNumber + secondNumber)
         setError('Click clear button to continue')
@@ -68,14 +68,14 @@ const text = firstValue + operator + secondValue;
       case '%':
         secondValue === '' ? setResult(firstNumber * 10 / 100) : setError('Operation not possible, click clear button to continue')
         break
-      default: 
+      default:
         break
     }
     setIsDisable(true)
-    
+
   }
-  
-  
+
+
 
   return (
     <div className="App">
@@ -88,7 +88,7 @@ const text = firstValue + operator + secondValue;
         <div className='input'>
           <p className='text'>{text}</p>
           <p className='errorMessage text'>{error}</p>
-          <p  className='text'>Result: {result} </p>
+          <p className='text'>Result: {result} </p>
         </div>
 
         <section className='buttons'>
@@ -108,14 +108,13 @@ const text = firstValue + operator + secondValue;
           <ButtonComponent value={'/'} isDisable={isDisable} action={addOperator} />
           <EqualButton value={'='} isDisable={isDisable} setError={setError} setIsDisable={setIsDisable} action={calculate} />
           <ButtonComponent value={'0'} isDisable={isDisable} action={addValue} />
-        
+
         </section>
-         <ClearButon value={'Clear'} resetResult={resetResult} />
+        <ClearButon value={'Clear'} resetResult={resetResult} />
       </section>
     </div>
   )
-  }
+}
 export default App;
 
 
- 
