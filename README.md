@@ -15,6 +15,7 @@
 
 
 ### Errores que contempla:
+- Introducir el operador antes del primer operando.
 - Intentar hacer una operación sin uno de los operandos.
 - Intentar hacer un porcentaje de varios operandos.
 - Cada vez que se realiza una operación, los botones se inhabilitan y aparece un mensaje para que el usuario reinicie la calculadora haciendo click en el botón 'clear'.
