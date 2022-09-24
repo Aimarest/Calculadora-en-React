@@ -7,7 +7,7 @@ describe('Test on CalculatorComponent', () => {
         );
         expect(container).toMatchSnapshot();
     })
-    test('If I do the sum of 2 + 6 the text of the result must be 8',()=>{
+    test('if the sum of two and six is made the text of the result must be 8',()=>{
         render(<CalculatorComponent/>);
         const btnValueTwo = screen.getByRole('button', {name:2});
         const btnValueSix = screen.getByRole('button', {name:6});

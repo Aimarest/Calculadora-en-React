@@ -1,4 +1,4 @@
-import './App.scss';
+
 import { CalculatorComponent } from './components/CalculatorComponent';
 const App = () => {
   return (
