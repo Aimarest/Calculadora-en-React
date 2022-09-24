@@ -41,4 +41,4 @@
 
 - Ana Isabel Marcos Estévez
 
-![Imagen de la calculadora](https://github.com/Aimarest/Calculadora-en-React/docs/images/image.png)
+![Imagen de la calculadora](https://github.com/Aimarest/Calculadora-en-React/blob/main/docs/images/image.png)
