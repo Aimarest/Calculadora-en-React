@@ -34,7 +34,7 @@ export const CalculatorComponent = () => {
     }
     const calculate = (value) => {
 
-         if (firstValue && operator && secondValue !== '') {
+        if (firstValue && operator && secondValue !== '') {
             setSecondValue((secondValue) => secondValue + value)
             let firstNumber = parseInt(firstValue);
             let secondNumber = parseInt(secondValue);
@@ -57,25 +57,25 @@ export const CalculatorComponent = () => {
                     setError('Click clear button to continue')
                     break
                 case '%':
-                     setError('Operation not possible, click clear button to continue')
+                    setError('Operation not possible, click clear button to continue')
                     break
                 default:
                     break
             }
             setIsDisable(true)
         }
-        
+
         else if (firstValue || secondValue === '') {
-            if(operator === '%' && secondValue === '' ){
+            if (operator === '%' && secondValue === '') {
                 let firstNumber = parseInt(firstValue);
-                setResult(firstNumber * 10 / 100) 
+                setResult(firstNumber * 10 / 100)
             }
-            else{
-                 setError('You have to enter a valid operation. Please click clear button to continue')
+            else {
+                setError('You have to enter a valid operation. Please click clear button to continue')
             }
-           
+
         }
-       
+
     }
 
     return (
