@@ -19,7 +19,6 @@ exports[`Test on CalculatorComponent It should display the initial component 1`]
         class="text"
       >
         Result: 
-         
       </p>
     </div>
     <section

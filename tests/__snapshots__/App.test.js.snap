@@ -29,7 +29,6 @@ exports[`Test on App component The initial component should be displayed 1`] = `
           class="text"
         >
           Result: 
-           
         </p>
       </div>
       <section
