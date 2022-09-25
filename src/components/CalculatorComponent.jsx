@@ -75,9 +75,9 @@ export const CalculatorComponent = () => {
                 setError('You have to enter a valid operation. Please click clear button to continue')
             }
             setIsDisable(true)
-           
         }
     }
+
     return (
         <section className='calculator'>
             <div className='input'>
@@ -103,7 +103,7 @@ export const CalculatorComponent = () => {
                 <ButtonComponent value={'='} isDisable={isDisable} action={calculate}/>
                 <ButtonComponent value={'0'} isDisable={isDisable} action={addValue}/>
             </section>
-            <ClearButon value={'Clear'} resetResult={resetResult}/>
+            <ClearButon value={'Clear'} resetResult={resetResult} />
         </section>
     )
 }
